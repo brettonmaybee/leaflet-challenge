@@ -5,6 +5,8 @@ var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/4.5_mo
 d3.json(queryUrl, function(data) {
   // Once we get a response, send the data.features object to the createFeatures function
   createFeatures(data.features);
+
+  console.log(data)
 });
 
 function createFeatures(earthquakeData) {
@@ -13,7 +15,8 @@ function createFeatures(earthquakeData) {
   // Give each feature a popup describing the place and time of the earthquake
   function onEachFeature(feature, layer) {
     layer.bindPopup("<h3>" + feature.properties.place +
-      "</h3><hr><p>" + new Date(feature.properties.time) + "</p>");
+      "</h3><hr><p>" + "Date and Time: "+new Date(feature.properties.time) + 
+      "</p>" + "Magnitude: "+ feature.properties.mag);
   }
 
   // Create a GeoJSON layer containing the features array on the earthquakeData object
@@ -71,4 +74,4 @@ function createMap(earthquakes) {
   L.control.layers(baseMaps, overlayMaps, {
     collapsed: false
   }).addTo(myMap);
-}
+};

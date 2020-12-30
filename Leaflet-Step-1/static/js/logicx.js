@@ -86,3 +86,31 @@ for (var i = 0; i < cities.length; i++) {
       .bindPopup("<h1>" + place + "</h1> <hr> <h3>Magnitude" + city.population + "</h3>")
       .addTo(myMap);
   }
+
+  / Loop through the cities array and create one marker for each city object
+  for (var i = 0; i < data.feature.length; i++) {
+
+  // Conditionals for countries points
+  var color = "";
+  if (feature[i].properties.mag > 6) {
+    color = "red";
+  }
+  else if (feature[i].properties.mag > 5) {
+    color = "yellow";
+  }
+  else if (feature[i].properties.mag > 4) {
+    color = "green";
+  }
+  else {
+    color = "blue";
+  }
+
+  // Add circles to map
+  L.circle(feature[i].properties.mag, {
+    fillOpacity: 0.75,
+    //color: "white",
+    fillColor: color,
+    // Adjust radius
+    radius: feature[i].properties.mag * 100
+  }).addTo(myMap);
+}}
