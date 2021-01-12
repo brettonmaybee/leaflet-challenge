@@ -28,20 +28,20 @@ function createFeatures(earthquakeData) {
     onEachFeature: onEachFeature
   });
   
-  var geojsonMarkerOptions = {
-    radius: 8,
-    fillColor: "#ff7800",
-    color: "#000",
-    weight: 1,
-    opacity: 1,
-    fillOpacity: 0.8
-};
+  //var geojsonMarkerOptions = {
+  //  radius: 
+  //  fillColor: "#ff7800",
+   // color: "#000",
+   // weight: 1,
+   // opacity: 1,
+   // fillOpacity: 0.8
+  //};
 
-  var earthquakes=L.geoJSON(earthquakeData, {
-    pointToLayer: function (feature, latlng) {
-        return L.circleMarker(latlng, geojsonMarkerOptions);
-    }
-  });
+  //var earthquakes=L.geoJSON(earthquakeData, {
+   // pointToLayer: function (feature, latlng) {
+   //    return L.circleMarker(latlng, geojsonMarkerOptions);
+   //}
+  //});
 //feature.geometry.coordinates
   // Sending our earthquakes layer to the createMap function
   createMap(earthquakes);
@@ -74,8 +74,9 @@ function createFeatures(earthquakeData) {
       };
     
       // Create overlay object to hold our overlay layer
-      var overlayMaps = {
+       var overlayMaps = {
         Earthquakes: earthquakes
+      
       };
   
     // Create our map, giving it the streetmap and earthquakes layers to display on load
