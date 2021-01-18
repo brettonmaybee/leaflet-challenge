@@ -182,7 +182,7 @@ d3.json((monthUrl), (monthdata)=> {
         }
       }).addTo(layers.dayLayer);
     
-      d3.json(("js/boundaries.json"), (platesData)=> {
+      d3.json(("static/js/boundaries.json"), (platesData)=> {
         L.geoJSON(platesData).addTo(platesLayer);
       });
     });
@@ -190,8 +190,8 @@ d3.json((monthUrl), (monthdata)=> {
 });
 
 document.querySelector(".legend").innerHTML = [
-  "<p class='blue'> Magnitude  <4 </p>",
-  "<p class='green'> Magnitude 4< </p>",
-  "<p class='yellow'> Magnitude 5< </p>",
-  "<p class='red'> Magnitude 6<  </p>",
+  "<p class='blue'> Magnitude  0-3.9 </p>",
+  "<p class='green'> Magnitude 4.0-4.9 </p>",
+  "<p class='yellow'> Magnitude 5.0-5.9 </p>",
+  "<p class='red'> Magnitude 6+  </p>",
 ].join("");

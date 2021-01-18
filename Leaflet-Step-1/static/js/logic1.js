@@ -68,7 +68,7 @@ function createMap(earthquakes) {
   });
    
   var tectonicplates = new L.LayerGroup();
-   d3.json(("js/boundaries.json"), (plates)=>{
+   d3.json(("static/js/boundaries1.json"), (plates)=>{
    L.geoJSON(plates).addTo(tectonicplates);
   
   // Define a baseMaps object to hold our base layers
