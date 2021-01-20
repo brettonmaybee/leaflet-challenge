@@ -21,6 +21,7 @@ var layers = {
   weekLayer: new L.LayerGroup(),
   monthLayer: new L.LayerGroup(),
 };  
+
 var platesLayer= new L.LayerGroup()
 
 //Create base layer group
